@@ -48,3 +48,6 @@ var Game = function () {
 
     return Game;
 }();
+
+var game = new Game(3,3,3)
+console.log("To play a game, time game.playMove(x,y) where x and y are the coordinates you want.")
