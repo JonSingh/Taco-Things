@@ -1,29 +1,4 @@
-class Game {
-    constructor(numberOfRows,numberOfColumns,numberOfBombs){
-        this._board = new Board(numberOfRows, numberOfColumns, numberOfBombs)
-    }
-
-    get board(){return this._board}
-    playMove(rowIndex,columnIndex){
-        this.board.flipTile(rowIndex, columnIndex)
-        if(this.board.playerBoard[rowIndex][columnIndex]==='B'){
-            console.log("Game Over! You lose!")
-            this.board.printBoard()            
-        }
-        else if(!this.board.hasSafeTiles()){
-            console.log("You win! Congratulations")
-            this.board.printBoard()
-        }
-        else {
-            console.log('Current Board: ')
-            this.board.printBoard()
-        }
-
-    }
-
-}
-
-class Board {
+export class Board {
     constructor(numberOfRows,numberOfColumns,numberOfBombs){
         this._numberOfBombs = numberOfBombs
         this._numberOfTiles = numberOfRows * numberOfColumns
@@ -104,6 +79,3 @@ class Board {
     }
     
 }
-
-const g = new Game(3,3,3)
-g.playMove(0,0)
